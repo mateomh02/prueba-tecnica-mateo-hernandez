@@ -105,20 +105,20 @@ p {
     right: 10px;
     top: 10px;
 
-    &--liked {
       animation: bounce 0.5s ease;
-      
-      svg {
-        width: 100%;
-        height: 100%;
-        
-        path {
-          stroke-width: 1000px;
-          stroke: styles.$cp4;
-          fill: styles.$cp4;
+      &.card__button--liked{
+        svg {
+          width: 100%;
+          height: 100%;
+          
+          path {
+            stroke-width: 1000px;
+            stroke: styles.$cp4;
+            fill: styles.$cp4;
+          }
         }
       }
-    }
+
 
     svg {
       width: 100%;

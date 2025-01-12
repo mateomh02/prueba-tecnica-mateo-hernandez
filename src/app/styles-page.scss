@@ -1,142 +1,152 @@
-@use '../styles/index.scss' as styles;
+@use "../styles/index.scss" as styles;
 // @use '../styles/base/variables.scss' as v;
 
-body{
-    background: styles.$cp1;
-    position: relative;
-    min-height: 100vh;
+body {
+  background: styles.$cp1;
+  position: relative;
+  min-height: 100vh;
 }
-.container-global{
-    width: 90%;
-    max-width: 1770px;
-    margin: 0 auto;
-    &--des-search{
-        @include styles.mq (md){
-            display: flex;
-            justify-content: space-between;
-            h1{
-                font-size: 60px
-            }
-            p{
-                font-size: 24px;
-            }
-            padding: 30px 0;
-        };
+.container-global {
+  width: 90%;
+  max-width: 1770px;
+  margin: 0 auto;
+  &--des-search {
+    @include styles.mq(md) {
+      display: flex;
+      justify-content: space-between;
+      h1 {
+        font-size: 60px;
+      }
+      p {
+        font-size: 24px;
+      }
+      padding: 30px 0;
     }
-    &--description{
-        padding-top: 20px;
-        text-align: center;
-        h1{
-            color: styles.$cp3;
-        }
-    }
-    &__movies{
-        &__favorites{
-            text-align: end;
-            &--link{
-                text-decoration: none;
-                font-weight: 700;
-            }
-            &--icon{
-                margin-right: 10px;
-                color: styles.$cp4;
-            }
-        }
-        &__pager{
-            display: flex;
-            justify-content: center;
-            column-gap: 10px;
-            align-items: center;
-            padding: 20px 0;
-            button{
-                font-size: 0;
-                border-radius: 50%;
-                padding: 0;
-                width: 20px;
-                height: 20px;
-                background-color: styles.$cp4;
-                transition: all 0.5s ease;
-                i{
-                    font-size: 16px;
-                    color: styles.$cp1;
-                }
-                &:disabled{
-                   background-color: styles.$cp5; 
-                }
-            }
-            &--page{
-                strong{
-                    color: styles.$cp4;
-                    font-weight: 400;
-                }
-            }
-        }
-        &__cards{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            background-color: styles.$cp6;
-            padding:20px;
-            border-radius: 16px;
-            @include styles.mq (md){
-            justify-content: space-around;
-            column-gap: 10px;
-            row-gap: 40px;
-            }
-            &--item{
-                max-width: 360px;
-            }
-        }
-    }
-}
-.loader{
-    display: inline-block;
+  }
+  &--description {
+    padding-top: 20px;
     text-align: center;
-    line-height: 86px;
-    text-align: center;
-    position: relative;
-    padding: 0 48px;
-    font-size: 48px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: styles.$cp4;
+    h1 {
+      color: styles.$cp3;
     }
-    .loader:before, .loader:after {
-      content: "";
-      display: block;
-      width: 15px;
-      height: 15px;
-      background: styles.$cp3;
-      position: absolute;
-      animation: load .7s infinite alternate ease-in-out;
-      top: 0;
-    }
-    .loader:after {
-      top: auto;
-      bottom: 0;
-    }
-.container-global__movies--no-results{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    text-align: center;
-    h1{
+  }
+  &__movies {
+    &__favorites {
+      text-align: end;
+      &--link {
+        text-decoration: none;
+        font-weight: 700;
+      }
+      &--icon {
+        margin-right: 10px;
         color: styles.$cp4;
+      }
     }
+    &__pager {
+      display: flex;
+      justify-content: center;
+      column-gap: 10px;
+      align-items: center;
+      padding: 20px 0;
+      button {
+        font-size: 0;
+        border-radius: 50%;
+        padding: 0;
+        width: 20px;
+        height: 20px;
+        background-color: styles.$cp4;
+        transition: all 0.5s ease;
+        i {
+          font-size: 16px;
+          color: styles.$cp1;
+        }
+        &:disabled {
+          background-color: styles.$cp5;
+        }
+      }
+      &--page {
+        strong {
+          color: styles.$cp4;
+          font-weight: 400;
+        }
+      }
+    }
+    &__cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      background-color: styles.$cp6;
+      padding: 20px;
+      border-radius: 16px;
+      @include styles.mq(md) {
+        justify-content: space-around;
+        column-gap: 10px;
+        row-gap: 40px;
+      }
+      &--item {
+        max-width: 360px;
+      }
+    }
+  }
 }
-.not-favorites{
+.loader {
+  display: inline-block;
+  text-align: center;
+  line-height: 86px;
+  text-align: center;
+  position: relative;
+  padding: 0 48px;
+  font-size: 48px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: styles.$cp4;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  background: styles.$cp3;
+  position: absolute;
+  animation: load 0.7s infinite alternate ease-in-out;
+  top: 0;
+}
+.loader:after {
+  top: auto;
+  bottom: 0;
+}
+.container-global__movies--no-results {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  h1 {
+    color: styles.$cp4;
+  }
+}
+.not-favorites {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  h1 {
+    color: styles.$cp3;
+  }
+}
+.not-found{
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%;
-    text-align: center;
-    h1{
-        color: styles.$cp3;
+    *{
+        color: styles.$cp2;
     }
 }
