@@ -1,4 +1,3 @@
-// app/favorites/page.tsx
 'use client'
 
 import { useFavorites } from '@/hooks/useFavorites';

@@ -7,7 +7,6 @@ import '@fortawesome/fontawesome-free/css/fontawesome.min.css';
 import '@fortawesome/fontawesome-free/css/solid.min.css';
 
 export function Card({ id, title, overview, poster_path, vote_average, release_date }: Movie) {
-  // const url = 
   const imageUrl = `https://image.tmdb.org/t/p/original${poster_path}`;
   const { isFavorite, toggleFavorite } = useFavorites();
   const isLiked = isFavorite(id);
@@ -52,7 +51,7 @@ export function Card({ id, title, overview, poster_path, vote_average, release_d
       >
         <path 
           d="M2815.88 13604.94l9379.85 8756.97c389.29 363.37 903.21 565.81 1437.86 565.81 534.65 0 1048.57-202.44 1437.86-565.81l9379.85-8756.97c1578.03-1469.02 2470.86-3529.77 2470.86-5683.99v-301.06c0-3628.39-2621.37-6722.14-6197.87-7319.1-2367.04-394.49-4775.59 378.95-6467.81 2071.18l-622.89 622.89-622.89-622.89c-1692.23-1692.23-4100.77-2465.66-6467.81-2071.14-3576.51 596.92-6197.87 3690.67-6197.87 7319.06v301.06c0 2154.22 892.83 4214.97 2470.86 5683.99z"
-          fill="currentColor"  // Esto permite que el color sea heredado del padre
+          fill="currentColor"
         />
       </svg>
         </button>

@@ -52,12 +52,5 @@ export function SearchMovie({ setMovies, setTotalPages, setLoading, setError }: 
                 <label className="Label" htmlFor="searchInput"></label>
             </div>
         </div>
-        // <input
-        //     type="text"
-        //     value={searchTerm}
-        //     onChange={(e) => setSearchTerm(e.target.value)}
-        //     placeholder="Buscar películas..."
-        //     className="w-full px-4 py-2 rounded-lg border"
-        // />
     )
 }

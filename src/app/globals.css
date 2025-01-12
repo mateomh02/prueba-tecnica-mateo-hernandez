@@ -19,3 +19,8 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+.container-cards{
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% ;
+  justify-content: space-between;
+}
