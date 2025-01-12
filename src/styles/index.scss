@@ -1,0 +1,59 @@
+@use './base/tipography.scss';
+@forward './base/variables.scss';
+@use './base/variables.scss' as v;
+@forward './base/mixins.scss';
+@use './base/mixins.scss' as mixin;
+
+@forward './base/keyframe.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    @include mixin.heading1(v.$cp2);
+}
+
+h2 {
+    @include mixin.heading2(v.$cp2);
+}
+
+h3 {
+    @include mixin.heading3(v.$cp2);
+}
+
+// Párrafos
+p {
+    @include mixin.paragraph-normal(v.$cp2);
+    
+    &.large {
+        @include mixin.paragraph-large(v.$cp2);
+    }
+    
+    &.small {
+        @include mixin.paragraph-small(v.$cp2);
+    }
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+    @include mixin.link(v.$cp2);
+    
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+input, 
+textarea {
+    @include mixin.paragraph-normal(v.$cp2);
+    
+    &::placeholder {
+        opacity: 0.7;
+    }
+}
+
+span{
+    @include mixin.label(v.$cp3)
+}

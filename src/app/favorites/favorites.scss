@@ -1,0 +1,19 @@
+@use "@/styles/index.scss" as styles;
+
+
+.container-global{
+    &--space{
+        margin-bottom: 50px;
+    }
+    &__description{
+        padding: 20px 0;
+        h1{
+            margin: 0;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        &--link{
+            @include styles.buttonReturn();
+        }
+    }
+}

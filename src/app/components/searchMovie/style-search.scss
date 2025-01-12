@@ -1,0 +1,90 @@
+@use '@/styles/index.scss' as styles;
+
+.search {
+  &-form {
+    text-align: center;
+    padding: 20px 10px 20px 0;
+    display: flex;
+    justify-content: end;
+  }
+  &-inner {
+    position: relative;
+    width: 100%;
+    @include styles.mq (md){
+      width: fit-content;
+    }
+  }
+  input[type="text"] {
+    background: transparent;
+    color: styles.$cp2;
+    border-radius: 50px;
+    border: 2px solid currentColor;
+    padding: 18px 20px;
+    @include styles.label(styles.$cp2);
+    @include styles.mq (md){
+      border: 3px solid currentColor;
+      -webkit-appearance: searchfield;
+      width: 0px;
+      height: 20px;
+      padding: 20px;
+      font-size: 18px;
+      transition: all 0.5s ease;
+    
+      &:focus,
+      &:active {
+        width: 250px;
+        outline: none;
+        + .Label::after {
+          height: 25px;
+          right: 25px;
+          top: 14px;
+          bottom: 0px;
+        }
+        + .Label::before {
+          height: 25px;
+          right: 25px;
+          top: 14px;
+        }
+      }
+      &::-webkit-input-placeholder {
+        color: currentColor;
+      }
+    }
+    &:focus-visible{
+      outline: none;
+    }
+  }
+  .Label {
+    @include styles.mq (md){
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 99;
+      &::before,
+      &::after {
+        position: absolute;
+        display: block;
+        content: "";
+        width: 3px;
+        border-radius: 10px;
+        transition: all 0.7s ease;
+        background-color: white;
+      }
+      &::after {
+        bottom: -16px;
+        right: -3px;
+        height: 27px;
+        transform: rotate(135deg);
+      }
+      &::before {
+        height: 0;
+        right: 0;
+        top: 0;
+        transform: rotate(45deg);
+      } 
+    }
+  }
+}
+

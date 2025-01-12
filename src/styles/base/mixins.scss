@@ -1,0 +1,205 @@
+@use "sass:map";
+@use './variables.scss' as v;
+$mediaQuerys: (
+  "xxs": 320px,
+  "xss": 370px,
+  "xssx": 418px,
+  "xs": 480px,
+  "sm": 768px,
+  "md": 1080px,
+  "mdx": 1024px,
+  "lg": 1200px,
+  "lg-xm": 1280px,
+  "lg-m": 1300px,
+  "lg-mm":1380px,
+  "xlg": 1480px,
+  "xlg-l": 1660px,
+  "xslg": 1940px,
+  "xxlg": 2000px,
+);
+
+@mixin mq($mquery) {
+  @media (min-width: map.get($mediaQuerys,$mquery)) {
+    @content;
+  }
+}
+
+@mixin heading1($color) {
+    font-family: v.$fp1;
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 700;
+    color: $color;
+    @include mq(md) {
+        font-size: 48px;
+        line-height: 56px;
+    }
+}
+
+@mixin heading2($color) {
+    font-family: v.$fp1;
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 600;
+    color: $color;
+    @include mq(md) {
+        font-size: 40px;
+        line-height: 48px;
+    }
+}
+
+@mixin heading3($color) {
+    font-family: v.$fp1;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+    color: $color;
+    @include mq(md) {
+        font-size: 32px;
+        line-height: 40px;
+    }
+}
+
+// Párrafos
+@mixin paragraph-large($color) {
+    font-family: v.$fp1;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+    color: $color;
+    @include mq(md) {
+        font-size: 20px;
+        line-height: 32px;
+    }
+}
+
+@mixin paragraph-normal($color) {
+    font-family: v.$fp1;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: $color;
+    @include mq(md) {
+        font-size: 18px;
+        line-height: 28px;
+    }
+}
+
+@mixin paragraph-small($color) {
+    font-family: v.$fp1;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: $color;
+    @include mq(md) {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+// Botones
+@mixin button-large($color) {
+    font-family: v.$fp1;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    color: $color;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    @include mq(md) {
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
+
+@mixin button-normal($color) {
+    font-family: v.$fp1;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    color: $color;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    @include mq(md) {
+        font-size: 18px;
+        line-height: 24px;
+    }
+}
+
+@mixin button-small($color) {
+    font-family: v.$fp1;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 500;
+    color: $color;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    @include mq(md) {
+        font-size: 16px;
+        line-height: 20px;
+    }
+}
+
+// Enlaces
+@mixin link($color) {
+    font-family: v.$fp1;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: $color;
+    text-decoration: underline;
+    @include mq(md) {
+        font-size: 18px;
+        line-height: 26px;
+    }
+}
+
+// Etiquetas y elementos pequeños
+@mixin label($color) {
+    font-family: v.$fp1;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    color: $color;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    @include mq(md) {
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+// Texto destacado
+@mixin highlight($color) {
+    font-family: v.$fp1;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 500;
+    color: $color;
+    font-style: italic;
+    @include mq(md) {
+        font-size: 24px;
+        line-height: 36px;
+    }
+}
+
+@mixin buttonReturn(){
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    transition: all 0.5s ease;
+    position: absolute;
+    left: 50px;
+    top: 20px;
+    &:hover{
+        transform: scale(1.1)
+    }
+    i{
+        color: v.$cp4;
+        display: block;
+    }
+    a{
+        text-decoration: none;
+        color: v.$cp4;
+    }
+}
